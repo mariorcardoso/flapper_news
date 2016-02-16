@@ -3,7 +3,7 @@ angular.module('flapperNews')
   $scope.post = post;
 
   $scope.addComment = function(){
-    if($scope.body === '') { return; }
+    if(!$scope.body || $scope.body === '') { return; }
     posts.addComment(post.id, {
       body: $scope.body,
       author: 'user',
